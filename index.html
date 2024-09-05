@@ -9,95 +9,113 @@
 
 <form>
 
-<!-- division de la template -->
+<!-- fieldset: division de la template -->
 <fieldset>
- <legend>Groupe les input localisation</legend>
+ <legend>
+		Groupe les input localisation
+	</legend>
  <div>
-  Ville :
+  <label for="city">Ville :</label>
   <input 
     type="text" 
     name="city" 
     value=""
+				id="city"
 				placeholder="veuillez écrire le nom d'une ville" 
   />
-  CP :
-  <input 
-    type="text" 
-    name="city" 
-    value="Rome" 
-  />
+		<p> <!-- ouvre le p ---------------  -->
+			<label for="cp">Code Postal :</label>
+			<input 
+					type="text" 
+					name="cp" 
+					value="" 
+					placeholder="veuillez écrire le code postal" 
+			/>
+	</p><!-- ferme le /p ----------------  -->
+
  </div>
 </fieldset>
 
-<fieldset disabled>
+<fieldset>
 <legend>Groupe les input sous le même terme</legend>
 <div>
-	Ecrivez votre nom : 
+	<p>
+	<label for="">Ecrivez votre nom : </label>
 	<input 	type="text" 
 			name="mon_nom" 
 			placeholder="j'inscris mon nom ici" />
+			</p>
 </div>
 
-<div>
-	Entrez votre mot de passe :
+<p>
+<label for="password">Mot de passe</label>	Entrez votre mot de passe :
 	<input type="password" name="mon_mot_de_passe" />
-</div>
+</p>
 </fieldset>
+
 <hr />
 
-<div>
-	Comment vous sentez-vous ?
-	<input type="radio" name="how_do_you_feel" value="very_good">Bien Bien
-	<input type="radio" name="how_do_you_feel" value="good">Bien	
-	<input type="radio" name="how_do_you_feel" value="fair">Bof
-</div>
-<br/>
+<fieldset>
+	<legend for="">Comment vous sentez-vous ?</legend>
+	<label for="very_good">Bien Bien</label>
+	<input type="radio" name="how_do_you_feel" value="very_good">
+	<label for="good">Bien</label>
+	<input type="radio" name="how_do_you_feel" value="good">	
+	<label for="bof">bof</label>
+	<input type="radio" name="how_do_you_feel" value="bof">
+</fieldset>
 
-<div>
-
-	<label for="male">Male</label>
-	<input type="radio" name="sex" id="male" value="male">
-
- <label for="male">Male
- 	<input type="radio" name="sex" id="male" value="male">
- </label>
-
-	<br>
-
-	<label for="female">Female</label>
+<fieldset>
+<legend>Genre:</legend>
+	<label for="male">Male
+		<input type="radio" name="sex" id="male" value="male">
+	</label>
+ <label for="male">non binaire
+ 	<input type="radio" name="sex" id="non binaire" value="male">
+	</label>
+	<label for="female">Female
 	<input type="radio" name="sex" id="female" value="female">
-	<br>
-</div>
-<hr />
+	</label>
+</fieldset>
 
 
-<div>
+
+<fieldset>
 	Votre style de musique ?
 	<input type="checkbox" name="music[]" value="pop">Popular
 	<input type="checkbox" name="music[]" value="rock">Rock 'n Roll
 	<input type="checkbox" name="music[]" value="rb">Rythm &amp; Blues
-</div>
-<br/>
+</fieldset>
 
-<div>
-	Quels sont vos pr&eacute;f&eacute;rences en mati&egrave;re de sandwich ? <BR>
-	<input type="checkbox" name="sandwich[]" value="poulet_curry">poulet curry<BR>
-	<input type="checkbox" name="sandwich[]" value="poulet_salade">poulet salade<BR>
-	<input type="checkbox" name="sandwich[]" value="thon_piquant">thon piquant<BR>
-</div>
+
+
+<fieldset>
+	<legend>Quels sont vos pr&eacute;f&eacute;rences en mati&egrave;re de sandwich ?</legend>
+	<p>
+	<label for="poulet_curry">poulet curry</label>
+	<input type="checkbox" name="sandwich[]" value="poulet_curry">
+</p>
+<p>
+	<label for="poulet_salade">Poulet Salade</label>
+	<input type="checkbox" name="sandwich[]" value="poulet_salade">
+</p>
+<p>
+	<label for="thon_piquant">Thon piquant</label>
+		<input type="checkbox" name="sandwich[]" value="thon_piquant">
+	</p>
+</fieldset>
 <!-- Horizontal rule: separation-->
 <hr />
 <div  >
-	<label for="voiture">Choisissez la couleur de votre voiture. Une de ces trois-là, et rien d'autre. </label>
-
+	<label for="glaces">Choisissez la couleur de votre glace. Une de ces trois-là, et rien d'autre. </label>
 <!-- 
 Select, menu de reroutage
 composé d'option, les option sont les choix du select.
 l'attribut selected permet de d'imposer un choix (option)
  -->
-	<select name="voiture">
+	<select name="glaces">
 	  <option value=""></option>
-	  <option value="choco" selected>Chocolate</option>
+	  <option value="choco" >Chocolate</option>
 	  <option value="straw" >Strawberry</option>
 	  <option value="vanilla">Vanilla</option>
 	</select>
@@ -126,23 +144,23 @@ l'attribut selected permet de d'imposer un choix (option)
 <hr />
 <div>
 <label for="my_favorite_color">
-	Ma couleur favorite : 
-	<input type="color" name="my_favorite_color" required />
+		Ma couleur favorite : 
+		<input type="color" name="my_favorite_color" required />
  </label>
 </div>
 <hr />
-
 <div>
-	<label for="my_favorite_number">Mon nombre fétiche (de 0 à 1000) : </label><br/>
+	<label for="my_favorite_number">Mon nombre fétiche (de 0 à 1000) : <br/>
 	0
 	<input 	
    type="range" 
 			name="my_favorite_number" 
 			id="my_favorite_number"
-			value="500"
+			value="0"
 			min="0" 
 			max="1000" />
 	1000
+	</label>
 	<br/>
 </div>
 <hr />
@@ -158,11 +176,13 @@ Pour soumettre le form</label>
 <button type="button">
 	button type "button"
 </button>
+<br>
+<input type="submit" value="ENVOYER">
 <label>Rien ne se passe. Il manque le code Javascript.</label>
 <br/>
 
 <button>
-	button no option
+ back to top ↑
 </button>
 <label>Forme minimaliste : Soumettre le form
 <br/>
@@ -174,7 +194,7 @@ Pour soumettre le form</label>
 <h3>Date</h3>
 
 <label for="start">Start date:
- <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+ <input type="date" id="start" name="trip-start" value="1993-06-12" min="1993-01-01" max="2018-12-31" />
 </label>
 <label for="start">Start end:
  <input type="date" id="end" name="trip-end" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
@@ -195,20 +215,23 @@ Pour soumettre le form</label>
 <label for="phone">
   Enter your phone number:<br />
   <small>Format: 123-456-7890</small>
-</label>
-
 <input type="tel" id="phone" name="phone" 
  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
 required />
-
+</label>
+<br>
+<label for="message">
+	Message:
+<textarea name="message" id="message">
+</textarea>
+</label>
 </form>
 <hr/>
 <a href="https://maps.app.goo.gl/HVTKgtBLLswveU4P8" target="widget">ce lien</a>
-<a href="www.awwwards.com" target="widget">ce lien</a>
-<a href="www.liberation.fr" target="widget">ce lien</a> <hr>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20144.625215872053!2d4.2716964743164025!3d50.86675290000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c15f149b970b%3A0x4db9360359368890!2sBasilic%20Medical%20Center!5e0!3m2!1sfr!2sbe!4v1718013480242!5m2!1sfr!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
+<a href="https://www.awwwards.com" target="widget">ce lien</a>
+<a href="https://www.liberation.fr" target="widget">ce lien</a>
+<hr>
+<iframe src="./form.html" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" name="widget" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <div>
 	<form action="">
 <table>
